@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide-in Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,20 +13,55 @@
             overflow-x: hidden;
         }
 
-        .menu-button {
+        .header {
             position: fixed;
             top: 10px;
-            left: 10px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .menu-button {
             background: none;
             border: none;
             cursor: pointer;
             font-size: 24px;
             outline: none;
-            z-index: 1;
         }
 
         .menu-button:focus {
             outline: none;
+        }
+
+        .username-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            width: auto;
+        }
+
+        .username-input {
+            padding: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            text-align: center;
+            width: 150px;
+        }
+
+        .edit-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            outline: none;
+            margin-left: 5px;
         }
 
         .menu {
@@ -62,7 +98,15 @@
 </head>
 <body>
 
-<button class="menu-button" id="menuButton">&#9776;</button>
+<div class="header">
+    <div>
+        <button class="menu-button" id="menuButton">&#9776;</button>
+    </div>
+    <div class="username-container">
+        <input type="text" class="username-input" placeholder="Username">
+        <button class="edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    </div>
+</div>
 
 <div class="menu" id="sideMenu">
     <a href="#">Home</a>
