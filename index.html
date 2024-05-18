@@ -13,16 +13,23 @@
             overflow-x: hidden;
         }
 
-        .header {
+        .header-container {
+            width: 100%; /* Полная ширина */
+            display: flex;
+            justify-content: center; /* Центрирование по горизонтали */
+            align-items: center;
             position: fixed;
             top: 10px;
             left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between; /* Распределение элементов по краям */
+            align-items: center;
             padding: 20px;
+            width: 100%; /* Полная ширина */
         }
 
         .menu-button {
@@ -38,11 +45,9 @@
         }
 
         .username-container {
-            position: relative;
             display: flex;
             align-items: center;
-            flex-grow: 1;
-            width: auto;
+            margin-right: 20px; /* Увеличиваем расстояние между полем ввода и кнопкой меню */
         }
 
         .username-input {
@@ -98,13 +103,13 @@
 </head>
 <body>
 
-<div class="header">
-    <div>
+<div class="header-container">
+    <div class="header">
         <button class="menu-button" id="menuButton">&#9776;</button>
-    </div>
-    <div class="username-container">
-        <input type="text" class="username-input" placeholder="Username">
-        <button class="edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <div class="username-container">
+            <input type="text" class="username-input" placeholder="Username">
+            <button class="edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        </div>
     </div>
 </div>
 
